@@ -150,7 +150,7 @@ export default function Home() {
                 <div className="flex gap-2">
                   <Image src={check2} alt="" />
                   <p className="font-light text-md">
-                    Transcribe Your Patient's Visit Dialogue
+                    Transcribe Your Patient&apos;s Visit Dialogue
                   </p>
                 </div>
                 <div className="flex gap-2">
@@ -211,7 +211,7 @@ export default function Home() {
                 <div className="flex gap-2">
                   <Image src={check2} alt="" />
                   <p className="font-light text-md">
-                    Transcribe Your Patient's Visit Dialogue
+                    Transcribe Your Patient&apos;s Visit Dialogue
                   </p>
                 </div>
                 <div className="flex gap-2">
