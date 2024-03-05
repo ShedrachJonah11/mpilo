@@ -10,8 +10,8 @@ function Footer() {
   const date = new Date();
 
   return (
-    <div className="h-full rounded-t-xl py-6 relative  flex flex-col md:px-32 z-0">
-      <div className="max-w-[1280px] sm:px-12 px-10 flex sm:flex-row flex-col rounded-2xl py-10 gap-5 justify-between">
+    <div className="h-full rounded-t-xl py-6 relative  flex flex-col  z-0">
+      <div className="max-w-[1280px] mx-auto w-full sm:px-12 px-10 flex md:flex-row flex-col rounded-2xl py-10 gap-5 justify-between">
         <div className="">
           <Image src={logo} alt="logo" />
           <div className="flex gap-6 mt-10">
@@ -28,8 +28,8 @@ function Footer() {
         </div>
 
         {/* Content */}
-        <div className="flex gap-10 md:gap-24 flex-wrap ">
-          <ul className="w-[200px]">
+        <div className="flex w-full justify-between sm:justify-evenly gap-10 md:gap-20 flex-wrap ">
+          <ul className="">
             <li className="text-[#000] text-xl mb-6 font-bold">Explore</li>
             <li className="mb-6 text-[#000] font-light">Feature</li>
             <li className="mb-6 text-[#000] font-light">About us</li>
@@ -53,7 +53,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row justify-between py-4 sm:px-10 px-3 border-t border-white text-[#062126]">
+      <div className="flex flex-col max-w-[1280px]  w-full sm:px-12 px-10  sm:flex-row justify-between py-4  border-t border-white text-[#062126]">
         <div className="mb-4 sm:mb-0">
           <p className="font-light">
             {" "}

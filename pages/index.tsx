@@ -11,15 +11,16 @@ import phone1 from "../public/Personal Chat1.svg";
 import phone2 from "../public/Personal Chat2.svg";
 import stars from "../public/stars.svg";
 import hipaa from "../public/HIPAA-square-logo 1.svg";
-
+import tick from "../public/correct tick.svg";
+import wrong from "../public/wrong.svg";
 export default function Home() {
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        delayChildren: 0.5,
-        duration: 0.5,
+        delayChildren: 0.4,
+        duration: 0.4,
       },
     },
   };
@@ -33,12 +34,12 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="h-screen bg-gradient-to-bl from-[#7B11F9] via-[#7922D8] to-[#3636B2]">
-        <div className="flex flex-col justify-center p-2 md:p-56  items-center h-full">
+      <div className="xl:h-screen bg-gradient-to-bl from-[#7B11F9] via-[#7922D8] to-[#3636B2] py-8">
+        <div className="flex flex-col justify-center lg:top-16 relative p-2 md:p-56  items-center h-full w-full">
           <motion.h4
             variants={container}
             viewport={{ once: false }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 0.7 }}
             initial="hidden"
             whileInView="show"
             className="text-white text-xl md:text-2xl mb-4 font-light mt-24"
@@ -53,7 +54,7 @@ export default function Home() {
             }}
             initial="hidden"
             whileInView="visible"
-            transition={{ ease: "linear", delay: 0.8 }}
+            transition={{ ease: "linear", delay: 0.7 }}
             viewport={{ once: false }}
             className="text-white text-4xl md:text-6xl mb-6 text-center font-bold"
           >
@@ -66,7 +67,7 @@ export default function Home() {
             }}
             initial="hidden"
             whileInView="visible"
-            transition={{ ease: "linear", delay: 0.9 }}
+            transition={{ ease: "linear", delay: 0.7 }}
             viewport={{ once: false }}
             className="text-gray-400 mb-6 font-light md:w-[900px] text-sm md:text-xl text-center"
           >
@@ -85,20 +86,20 @@ export default function Home() {
             [HIPPA Compliant]
           </p>
 
-          <div className="flex flex-col mt-20 md:flex-row md:mt-44 md:gap-20 space-y-8 md:space-y-0">
-            <div className="flex items-center">
+          <div className="flex flex-col flex-wrap mt-20 md:flex-row md:mt-36 md:gap-20 space-y-8 md:space-y-0 justify-center">
+            <div className="flex items-center justify-center w-[340px]">
               <Image src={check} alt="check" className="mr-4" />
               <p className="text-white text-lg md:text-xl">
                 Easy to use in your web browser
               </p>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center justify-center w-[340px]">
               <Image src={check} alt="check" className="mr-4" />
               <p className="text-white text-lg md:text-xl">
                 AI medical scribing tool
               </p>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center justify-center w-[340px]">
               <Image src={check} alt="check" className="mr-4" />
               <p className="text-white text-lg md:text-xl">No data stored</p>
             </div>
@@ -117,7 +118,7 @@ export default function Home() {
               }}
               initial="hidden"
               whileInView="visible"
-              transition={{ ease: "linear", delay: 0.9 }}
+              transition={{ ease: "linear", delay: 0.7 }}
               viewport={{ once: false }}
               className="text-center text-2xl md:text-4xl p-20 font-semibold md:w-[900px]"
             >
@@ -133,9 +134,9 @@ export default function Home() {
             }}
             initial="hidden"
             whileInView="visible"
-            transition={{ ease: "linear", delay: 0.9 }}
+            transition={{ ease: "linear", delay: 0.7 }}
             viewport={{ once: false }}
-            className="flex flex-col md:flex-row p-4 space-x-6 md:space-x-56 justify-center"
+            className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-10 p-4 space-x-6  justify-between items-center"
           >
             <div className="">
               <p className="text-[#F74D4D] mb-4">Efficiency Multiplied</p>
@@ -175,8 +176,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="ml-0 mt-4 md:mt-0 md:ml-8 hidden md:block">
-              <Image src={trust} alt="" />
+            <div className="ml-0 mt-4 md:mt-0  flex justify-center items-center ">
+              <Image className="" src={trust} alt="" />
             </div>
           </motion.div>
         </div>
@@ -191,11 +192,11 @@ export default function Home() {
             }}
             initial="hidden"
             whileInView="visible"
-            transition={{ ease: "linear", delay: 0.9 }}
+            transition={{ ease: "linear", delay: 0.7 }}
             viewport={{ once: false }}
-            className="flex flex-col md:flex-row space-x-6 md:space-x-96 justify-center"
+            className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-10 p-4 space-x-6  justify-between items-center"
           >
-            <div className="md:ml-8 hidden md:block">
+            <div className="ml-0 mt-4 md:mt-0  flex justify-center items-center ">
               <Image src={bot} alt="" />
             </div>
             <div className="">
@@ -253,18 +254,20 @@ export default function Home() {
               }}
               initial="hidden"
               whileInView="visible"
-              transition={{ ease: "linear", delay: 0.9 }}
+              transition={{ ease: "linear", delay: 0.7 }}
               viewport={{ once: false }}
               className="flex flex-col"
             >
               <Card className="bg-blue-100 flex-1">
-                <CardBody className="flex flex-col md:flex-row items-center flex-1">
-                  <div className="mb-4 md:mb-0 md:mr-4">
-                    <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
-                  </div>
+                <CardBody className="flex flex-col md:flex-row gap-3 flex-1">
                   <div>
-                    <h1>John Doe</h1>
-                    <Image src={stars} alt="" />
+                    <div className="flex gap-3">
+                      <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+                      <div className="flex flex-col">
+                        <h1>John Doe</h1>
+                        <Image src={stars} alt="" />
+                      </div>
+                    </div>
                     <p>
                       These guys are incredible to work with. Like seriously!
                       They did everything so good, that I did not even imagine
@@ -284,18 +287,20 @@ export default function Home() {
               }}
               initial="hidden"
               whileInView="visible"
-              transition={{ ease: "linear", delay: 0.9 }}
+              transition={{ ease: "linear", delay: 0.7 }}
               viewport={{ once: false }}
               className="flex flex-col"
             >
               <Card className="bg-blue-100 flex-1">
-                <CardBody className="flex flex-col md:flex-row items-center flex-1">
-                  <div className="mb-4 md:mb-0 md:mr-4">
-                    <Avatar src="https://i.pravatar.cc/150?u=anotheruser" />
-                  </div>
+                <CardBody className="flex flex-col md:flex-row gap-3 flex-1">
                   <div>
-                    <h1>Jane Smith</h1>
-                    <Image src={stars} alt="" />
+                    <div className="flex gap-3">
+                      <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+                      <div className="flex flex-col">
+                        <h1>Jane Smith</h1>
+                        <Image src={stars} alt="" />
+                      </div>
+                    </div>
                     <p>
                       Absolutely amazing experience working with this team.
                       Their professionalism and dedication are unmatched. Highly
@@ -321,7 +326,7 @@ export default function Home() {
                 }}
                 initial="hidden"
                 whileInView="visible"
-                transition={{ ease: "linear", delay: 0.9 }}
+                transition={{ ease: "linear", delay: 0.7 }}
                 viewport={{ once: false }}
                 className="text-center text-2xl md:text-4xl p-20 font-semibold md:w-[900px]"
               >
@@ -337,9 +342,9 @@ export default function Home() {
               }}
               initial="hidden"
               whileInView="visible"
-              transition={{ ease: "linear", delay: 0.9 }}
+              transition={{ ease: "linear", delay: 0.7 }}
               viewport={{ once: false }}
-              className="flex flex-col md:flex-row p-4 space-x-6 md:space-x-56 justify-center items-center"
+              className="max-w-[1280px] mx-auto flex flex-col sm:flex-row gap-10 p-4 space-x-6  justify-between items-center"
             >
               <div className="">
                 <h1 className="text-xl md:text-3xl mb-10 font-medium md:max-w-[500px]">
@@ -359,8 +364,8 @@ export default function Home() {
                   Try For Free
                 </Button>
               </div>
-              <div className="ml-0 mt-4 md:mt-0 md:ml-8 hidden md:block">
-                <Image src={phone1} alt="" />
+              <div className="ml-0 mt-4 md:mt-0  flex justify-center items-center ">
+                <Image className="md:w-auto sm:w-[80%]" src={phone1} alt="" />
               </div>
             </motion.div>
           </div>
@@ -375,12 +380,12 @@ export default function Home() {
               }}
               initial="hidden"
               whileInView="visible"
-              transition={{ ease: "linear", delay: 0.9 }}
+              transition={{ ease: "linear", delay: 0.7 }}
               viewport={{ once: false }}
-              className="flex flex-col md:flex-row space-x-6 md:space-x-96 justify-center item-center"
+              className="max-w-[1280px] mx-auto flex flex-col-reverse sm:flex-row gap-10 p-4 space-x-6  justify-between items-center"
             >
-              <div className="md:ml-8 hidden md:block">
-                <Image src={phone2} alt="" />
+              <div className="ml-0 mt-4 md:mt-0  flex justify-center items-center ">
+                <Image className="md:w-auto sm:w-[80%]" src={phone2} alt="" />
               </div>
               <div className=" justify-center flex-col flex">
                 <h1 className="text-xl md:text-3xl mb-10 font-medium md:max-w-[500px]">
@@ -471,7 +476,7 @@ export default function Home() {
 
       {/* Pricing */}
       <section>
-        <div className="bg-[#F8FBFF] min-h-screen p-10 md:p-40">
+        <div className="bg-[#F8FBFF] flex flex-col w-full min-h-screen p-10 lg:p-40 gap-10">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0 md:mr-10">
               <h1 className="text-2xl md:text-4xl mb-4 font-bold">
@@ -483,11 +488,11 @@ export default function Home() {
             </div>
             {/* Tabs */}
             <div className="flex justify-center items-center">
-              <div className="flex items-center bg-[#E5E8EC] rounded-full p-1 px-6">
+              <div className="flex items-center bg-[#e8eaf1] rounded-full gap-2 p-2 px-2">
                 <div
-                  className={`cursor-pointer mr-4 ${
+                  className={`cursor-pointer mr-4 py-2 px-4 ${
                     activeTab === "MONTHLY"
-                      ? "bg-[#F74D4D] rounded-full py-2 px-4 text-white font-semibold"
+                      ? "bg-[#F74D4D] rounded-full  text-white font-semibold"
                       : "text-gray-500"
                   }`}
                   onClick={() => setActiveTab("MONTHLY")}
@@ -495,7 +500,7 @@ export default function Home() {
                   MONTHLY
                 </div>
                 <div
-                  className={`cursor-pointer ${
+                  className={`cursor-pointer py-2 px-4 ${
                     activeTab === "YEARLY"
                       ? "bg-[#F74D4D] rounded-full py-2 px-4 text-white font-semibold"
                       : "text-gray-500"
@@ -508,7 +513,203 @@ export default function Home() {
             </div>
           </div>
           {/* Prices */}
-          <div></div>
+          <div className="flex flex-wrap justify-between items-center w-full">
+            <div className="lg:block hidden">
+              <ul className="flex flex-col gap-8 pt-13 relative top-7 text-start justify-start text-[#848199] font-normal text-lg">
+                <li>All limited links</li>
+                <li>Own analytics platform</li>
+                <li>Chat support</li>
+                <li>Number of users</li>
+                <li>Optimize hashtags</li>
+                <li>Account manager</li>
+                <li>Number of articles</li>
+                <li>Satisfaction guarant</li>
+              </ul>
+            </div>
+            <motion.ul
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: {
+                    delayChildren: 0.4,
+                    staggerChildren: 0.4,
+                    duration: 0.4,
+                  },
+                },
+              }}
+              viewport={{ once: false }}
+              className="flex flex-wrap justify-evenly gap-10"
+            >
+              <motion.li
+                variants={{
+                  hidden: { y: 60, opacity: 0 },
+                  visible: { y: 0, opacity: 1 },
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false }}
+                transition={{ ease: "linear", delay: 0.5 }}
+                className="flex flex-col gap-10 items-center justify-center p-10 transition-all duration-75 hover:bg-white hover:scale-105 hover:shadow-lg "
+              >
+                <p className="font-bold text-2xl">Starter</p>
+                {activeTab === "MONTHLY" ? (
+                  <p>
+                    <span className=" font-bold  text-4xl">$20</span>
+                    <span className="text-[#848199] font-normal ">/month</span>
+                  </p>
+                ) : (
+                  <p>
+                    <span className=" font-bold  text-4xl">$110</span>
+                    <span className="text-[#848199] font-normal ">/year</span>
+                  </p>
+                )}
+                <div className="flex gap-2">
+                  <div>
+                    <ul className="flex lg:hidden  flex-col gap-8 pt-13 relative top-7 text-start justify-start text-[#848199] font-normal text-lg">
+                      <li>All limited links</li>
+                      <li>Own analytics platform</li>
+                      <li>Chat support</li>
+                      <li>Number of users</li>
+                      <li>Optimize hashtags</li>
+                      <li>Account manager</li>
+                      <li>Number of articles</li>
+                      <li>Satisfaction guarant</li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col relative items-center justify-center top-7 gap-11">
+                    <Image src={tick} alt="" />
+                    <Image src={tick} alt="" />
+                    <Image src={tick} alt="" />
+                    <p>1 user</p>
+                    <Image src={tick} alt="" />
+                    <Image src={wrong} alt="" />
+                    <Image src={wrong} alt="" />
+                    <Image src={tick} alt="" />
+                  </div>
+                </div>
+                <Button
+                  radius="full"
+                  size="lg"
+                  className="bg-[#F74D4D] text-white  relative top-5"
+                >
+                  Choose plan
+                </Button>
+              </motion.li>
+              <motion.li
+                variants={{
+                  hidden: { y: 60, opacity: 0 },
+                  visible: { y: 0, opacity: 1 },
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false }}
+                transition={{ ease: "linear", delay: 0.7 }}
+                className="flex flex-col gap-10 items-center justify-center p-10 transition-all duration-75 hover:bg-white hover:scale-105 hover:shadow-lg "
+              >
+                <p className="font-bold text-2xl">Pro</p>
+                {activeTab === "MONTHLY" ? (
+                  <p>
+                    <span className=" font-bold  text-4xl">$100</span>
+                    <span className="text-[#848199] font-normal ">/month</span>
+                  </p>
+                ) : (
+                  <p>
+                    <span className=" font-bold  text-4xl">$1000</span>
+                    <span className="text-[#848199] font-normal ">/year</span>
+                  </p>
+                )}
+                <div className="flex gap-2">
+                  <div>
+                    <ul className="flex lg:hidden  flex-col gap-8 pt-13 relative top-7 text-start justify-start text-[#848199] font-normal text-lg">
+                      <li>All limited links</li>
+                      <li>Own analytics platform</li>
+                      <li>Chat support</li>
+                      <li>Number of users</li>
+                      <li>Optimize hashtags</li>
+                      <li>Account manager</li>
+                      <li>Number of articles</li>
+                      <li>Satisfaction guarant</li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col  items-center justify-center relative top-7 gap-11">
+                    <Image src={tick} alt="" />
+                    <Image src={tick} alt="" />
+                    <Image src={tick} alt="" />
+                    <p>3 user</p>
+                    <Image src={tick} alt="" />
+                    <Image src={tick} alt="" />
+                    <Image src={wrong} alt="" />
+                    <Image src={tick} alt="" />
+                  </div>
+                </div>
+
+                <Button
+                  radius="full"
+                  size="lg"
+                  className="bg-[#F74D4D] text-white  relative top-5"
+                >
+                  Choose plan
+                </Button>
+              </motion.li>
+              <motion.li
+                variants={{
+                  hidden: { y: 60, opacity: 0 },
+                  visible: { y: 0, opacity: 1 },
+                }}
+                initial="hidden"
+                whileInView="visible"
+                transition={{ ease: "linear", delay: 0.9 }}
+                viewport={{ once: false }}
+                className="flex flex-col gap-10 items-center justify-center p-10 transition-all duration-75 hover:bg-white hover:scale-105 hover:shadow-lg "
+              >
+                <p className="font-bold text-2xl">Group Plan</p>
+                {activeTab === "MONTHLY" ? (
+                  <p>
+                    <span className=" font-bold  text-4xl">$200</span>
+                    <span className="text-[#848199] font-normal ">/month</span>
+                  </p>
+                ) : (
+                  <p>
+                    <span className=" font-bold  text-4xl">$2200</span>
+                    <span className="text-[#848199] font-normal ">/year</span>
+                  </p>
+                )}
+                <div className="flex gap-2">
+                  <div>
+                    <ul className="flex lg:hidden  flex-col gap-8 pt-13 relative top-7 text-start justify-start text-[#848199] font-normal text-lg">
+                      <li>All limited links</li>
+                      <li>Own analytics platform</li>
+                      <li>Chat support</li>
+                      <li>Number of users</li>
+                      <li>Optimize hashtags</li>
+                      <li>Account manager</li>
+                      <li>Number of articles</li>
+                      <li>Satisfaction guarant</li>
+                    </ul>
+                  </div>
+                  <div className="flex flex-col relative items-center justify-center top-7 gap-11">
+                    <Image src={tick} alt="" />
+                    <Image src={tick} alt="" />
+                    <Image src={tick} alt="" />
+                    <p>Unlimited</p>
+                    <Image src={tick} alt="" />
+                    <Image src={tick} alt="" />
+                    <Image src={tick} alt="" />
+                    <Image src={tick} alt="" />
+                  </div>
+                </div>
+
+                <Button
+                  radius="full"
+                  size="lg"
+                  className="bg-[#F74D4D] text-white  relative top-5"
+                >
+                  Choose plan
+                </Button>
+              </motion.li>
+            </motion.ul>
+          </div>
         </div>
       </section>
     </div>
