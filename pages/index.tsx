@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Avatar, Button, Card, CardBody } from "@nextui-org/react";
 import Image from "next/image";
 import check from "../public/check.svg";
@@ -13,7 +13,13 @@ import stars from "../public/stars.svg";
 import hipaa from "../public/HIPAA-square-logo 1.svg";
 import tick from "../public/correct tick.svg";
 import wrong from "../public/wrong.svg";
+import flatArrow from "../public/flatarrow.svg"
+
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("MONTHLY");
+  const [scrollX, setscrollX] = useState(0); // For detecting start scroll postion
+  const [scrolEnd, setscrolEnd] = useState(false); // For detecting end of scrollin
+  const containerRef = useRef<any>();
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -29,7 +35,21 @@ export default function Home() {
     show: { opacity: 1, y: 0 },
   };
 
-  const [activeTab, setActiveTab] = useState("MONTHLY");
+  const handleScroll = (scrollAmount: number) => {
+    containerRef.current.scrollLeft += scrollAmount;
+    setscrollX(scrollX + scrollAmount); // Updates the latest scrolled postion
+
+    //For checking if the scroll has ended
+    if (
+      Math.floor(
+        containerRef.current.scrollWidth - containerRef.current.scrollLeft
+      ) <= containerRef.current.offsetWidth
+    ) {
+      setscrolEnd(true);
+    } else {
+      setscrolEnd(false);
+    }
+  };
 
   return (
     <div>
@@ -69,7 +89,7 @@ export default function Home() {
             whileInView="visible"
             transition={{ ease: "linear", delay: 0.7 }}
             viewport={{ once: false }}
-            className="text-gray-400 mb-6 font-light md:w-[900px] text-sm md:text-xl text-center"
+            className="text-gray-400 mb-6 font-light sm:w-[600px] lg:w-[900px] text-sm md:text-xl text-center"
           >
             Mpilo is an innovative scribing assistant, specifically designed to
             revolutionize the way healthcare professionals create SOAP notes
@@ -120,7 +140,7 @@ export default function Home() {
               whileInView="visible"
               transition={{ ease: "linear", delay: 0.7 }}
               viewport={{ once: false }}
-              className="text-center text-2xl md:text-4xl p-20 font-semibold md:w-[900px]"
+              className="text-center text-2xl md:text-4xl p-20 font-semibold lg:w-[900px]"
             >
               Your trusted partner in modern healthcare documentation.
             </motion.h1>
@@ -242,11 +262,50 @@ export default function Home() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-10 md:py-20 px-4 md:px-32">
+      <section className="py-10 md:py-20 px-4 max-w-[1280px] mx-auto">
         <div className="mx-auto max-w-xl md:max-w-none">
-          <h1 className="text-2xl md:text-4xl font-semibold">Testimonial</h1>
+          <div className="flex justify-between">
+            <h1 className="text-2xl md:text-4xl font-semibold">Testimonial</h1>
+            <div className="flex gap-8">
+              <Button
+                isIconOnly
+                className={`bg-[#F74D4D] bg-opacity-40  p-5 rounded-full ${
+                  scrollX === 0 && "filter grayscale "
+                }`}
+                onClick={() => handleScroll(-200)}
+                disabled={scrollX === 0 && true}
+                startContent={
+                  <Image
+                    alt="arrow"
+                    className="w-[120px] max-w-[unset] rotate-180"
+                    src={flatArrow}
+                    width={100}
+                  ></Image>
+                }
+              ></Button>
+              <Button
+                isIconOnly
+                className={`bg-[#F74D4D] bg-opacity-40 p-5 rounded-full ${
+                  scrolEnd && "filter grayscale "
+                }`}
+                onClick={() => handleScroll(200)}
+                disabled={scrolEnd && true}
+                startContent={
+                  <Image
+                    alt="arrow"
+                    className="relative z-50 w-8 max-w-[unset]"
+                    src={flatArrow}
+                    width={100}
+                  ></Image>
+                }
+              ></Button>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 mt-20">
+          <div
+            className="flex w-full gap-6 md:gap-20 mt-20 overflow-x-auto pb-7"
+            ref={containerRef}
+          >
             <motion.div
               variants={{
                 hidden: { y: 60, opacity: 0 },
@@ -256,7 +315,7 @@ export default function Home() {
               whileInView="visible"
               transition={{ ease: "linear", delay: 0.7 }}
               viewport={{ once: false }}
-              className="flex flex-col"
+              className="flex flex-col sm:min-w-[350px] min-w-[250px] max-w-[400px]"
             >
               <Card className="bg-blue-100 flex-1">
                 <CardBody className="flex flex-col md:flex-row gap-3 flex-1">
@@ -289,7 +348,7 @@ export default function Home() {
               whileInView="visible"
               transition={{ ease: "linear", delay: 0.7 }}
               viewport={{ once: false }}
-              className="flex flex-col"
+              className="flex flex-col sm:min-w-[350px] min-w-[250px] max-w-[400px]"
             >
               <Card className="bg-blue-100 flex-1">
                 <CardBody className="flex flex-col md:flex-row gap-3 flex-1">
