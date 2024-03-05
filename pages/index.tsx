@@ -214,7 +214,7 @@ export default function Home() {
             whileInView="visible"
             transition={{ ease: "linear", delay: 0.7 }}
             viewport={{ once: false }}
-            className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-10 p-4 space-x-6  justify-between items-center"
+            className="max-w-[1280px] mx-auto flex flex-col-reverse lg:flex-row gap-10 p-4   justify-between items-center"
           >
             <div className="ml-0 mt-4 md:mt-0  flex justify-center items-center ">
               <Image src={bot} alt="" />
@@ -403,7 +403,7 @@ export default function Home() {
               whileInView="visible"
               transition={{ ease: "linear", delay: 0.7 }}
               viewport={{ once: false }}
-              className="max-w-[1280px] mx-auto flex flex-col sm:flex-row gap-10 p-4 space-x-6  justify-between items-center"
+              className="max-w-[1280px] mx-auto flex flex-col sm:flex-row gap-10 p-4   justify-between items-center"
             >
               <div className="">
                 <h1 className="text-xl md:text-3xl mb-10 font-medium md:max-w-[500px]">
@@ -424,7 +424,11 @@ export default function Home() {
                 </Button>
               </div>
               <div className="ml-0 mt-4 md:mt-0  flex justify-center items-center ">
-                <Image className="md:w-auto sm:w-[80%]" src={phone1} alt="" />
+                <Image
+                  className="md:w-auto sm:w-[80%] mx-auto"
+                  src={phone1}
+                  alt=""
+                />
               </div>
             </motion.div>
           </div>
@@ -441,7 +445,7 @@ export default function Home() {
               whileInView="visible"
               transition={{ ease: "linear", delay: 0.7 }}
               viewport={{ once: false }}
-              className="max-w-[1280px] mx-auto flex flex-col-reverse sm:flex-row gap-10 p-4 space-x-6  justify-between items-center"
+              className="max-w-[1280px] mx-auto flex flex-col-reverse sm:flex-row gap-10 p-4  justify-between items-center"
             >
               <div className="ml-0 mt-4 md:mt-0  flex justify-center items-center ">
                 <Image className="md:w-auto sm:w-[80%]" src={phone2} alt="" />
@@ -475,12 +479,12 @@ export default function Home() {
           whileInView="visible"
           transition={{ ease: "linear", delay: 0.9 }}
           viewport={{ once: false }}
-          className="h-full flex flex-col py-40 py space-x-5  items-center"
+          className="h-full flex flex-col py-40 px-3  items-center"
         >
           <p className="text-[#F74D4D] mb-4">
             Safeguarding your data is our top priority.
           </p>
-          <h1 className="font-medium text-2xl md:text-4xl mb-8">
+          <h1 className="font-medium text-2xl text-center md:text-4xl mb-8">
             DATA PRIVACY AND SECUIRITY
           </h1>
 
@@ -609,7 +613,7 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: false }}
                 transition={{ ease: "linear", delay: 0.5 }}
-                className="flex flex-col gap-10 items-center justify-center p-10 transition-all duration-75 hover:bg-white hover:scale-105 hover:shadow-lg "
+                className="flex flex-col gap-10 items-center justify-center p-10 transition-all duration-75 bg-white sm:bg-none hover:bg-white hover:scale-105 hover:shadow-lg "
               >
                 <p className="font-bold text-2xl">Starter</p>
                 {activeTab === "MONTHLY" ? (
@@ -664,7 +668,7 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: false }}
                 transition={{ ease: "linear", delay: 0.7 }}
-                className="flex flex-col gap-10 items-center justify-center p-10 transition-all duration-75 hover:bg-white hover:scale-105 hover:shadow-lg "
+                className="flex flex-col gap-10 items-center justify-center p-10 transition-all duration-75 bg-white sm:bg-none hover:bg-white hover:scale-105 hover:shadow-lg "
               >
                 <p className="font-bold text-2xl">Pro</p>
                 {activeTab === "MONTHLY" ? (
@@ -720,7 +724,7 @@ export default function Home() {
                 whileInView="visible"
                 transition={{ ease: "linear", delay: 0.9 }}
                 viewport={{ once: false }}
-                className="flex flex-col gap-10 items-center justify-center p-10 transition-all duration-75 hover:bg-white hover:scale-105 hover:shadow-lg "
+                className="flex flex-col gap-10 items-center justify-center p-10 transition-all duration-75 bg-white sm:bg-none hover:bg-white hover:scale-105 hover:shadow-lg "
               >
                 <p className="font-bold text-2xl">Group Plan</p>
                 {activeTab === "MONTHLY" ? (
