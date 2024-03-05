@@ -34,14 +34,14 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <div className="h-screen bg-gradient-to-bl from-[#7B11F9] via-[#7922D8] to-[#3636B2]">
-        <div className="flex flex-col justify-center p-10 md:p-56  items-center h-full">
+        <div className="flex flex-col justify-center p-2 md:p-56  items-center h-full">
           <motion.h4
             variants={container}
             viewport={{ once: false }}
             transition={{ delay: 1 }}
             initial="hidden"
             whileInView="show"
-            className="text-white text-xl md:text-2xl mb-4 font-light"
+            className="text-white text-xl md:text-2xl mb-4 font-light mt-24"
           >
             Your AI medical scribe
           </motion.h4>

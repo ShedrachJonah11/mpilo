@@ -4,6 +4,7 @@ import logo from "../public/mpilo.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@nextui-org/react";
+import menuIcon from "../public/menuicon.svg"; // Import the menu icon image
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,7 +40,8 @@ export default function Nav() {
         </Link>
         {isMobile ? (
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? "Close" : "Menu"}
+            {/* Use the menu icon image instead of text */}
+            <Image src={menuIcon} alt="menu" />
           </button>
         ) : (
           <div className="flex items-center space-x-6">
@@ -76,25 +78,33 @@ export default function Nav() {
         )}
       </div>
       {isMenuOpen && (
-        <div className="px-4 py-2">
+        <div className="px-4 bg-white rounded-xl py-2">
           <Link href="/">
-            <h1 className="text-black mr-6">Home</h1>
+            <h1 className="text-black mb-2 mr-6">Home</h1>
           </Link>
           <Link href="">
-            <h1 className="text-black mr-6">About us</h1>
+            <h1 className="text-black mb-2 mr-6">About</h1>
+          </Link>
+          <Link href="">
+            <h1 className="text-black mb-2 mr-6">Product</h1>
           </Link>
           <Link href="/#Pricing">
-            <h1 className={`${pathname.includes("/#Pricing") && "text-black"}`}>
+            <h1
+              className={`${
+                pathname.includes("/#Pricing") && "text-black"
+              } mb-2`}
+            >
               Pricing
             </h1>
           </Link>
-          <Link href="/auth/login" className="text-black font-semibold mr-4">
-            <h1>Login</h1>
+          <Link href="">
+            <h1 className="text-black mb-2 mr-6">Contact</h1>
           </Link>
+
           <Link href="/auth/create">
-            <h1 className="bg-[#008080] text-white px-6 py-2 rounded-md font-semibold">
+            <Button className="bg-[#F74D4D] text-white px-6 py-2 rounded-md font-semibold">
               Get Started
-            </h1>
+            </Button>
           </Link>
         </div>
       )}
